@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Mail, Phone, Briefcase, Award, GraduationCap } from 'lucide-react';
+import { User, Briefcase, Award, GraduationCap } from 'lucide-react';
 
 export default function Team() {
   const teamMembers = [
@@ -20,11 +20,6 @@ export default function Team() {
       role: "מנכ״ל העמותה",
       description: "בעל ניסיון רב בניהול פרויקטים",
       expertise: ["ניהול עמותות", "תפעול רפואי", "פיתוח עסקי"]
-    },
-    {
-      name: "ישי מייזלס",
-      role: "מורשה חתימה וגזבר",
-      expertise: ["ניהול כספי", "ביקורת פנימית", "תקציבים"]
     },
     {
       name: "עו״ד אבי במברגר",

@@ -11,7 +11,8 @@ const HELP_COLORS = [
 ];
 
 export default function Help() {
-  const { t, dir, localizePath } = useLanguage();
+  const { t, dir, language, localizePath } = useLanguage();
+  const isEnglish = language === 'en';
   const rowReverse = dir === 'rtl' ? 'space-x-reverse' : '';
   const listClass = dir === 'rtl' ? 'list-disc list-inside mr-4' : 'list-disc list-inside ml-4';
 
@@ -26,8 +27,8 @@ export default function Help() {
     <div className="min-h-screen py-12" dir={dir}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{t.help.title}</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t.help.subtitle}</p>
+          <h1 className="section-title mb-6">{t.help.title}</h1>
+          <p className={`text-xl text-gray-600 mx-auto text-balance ${isEnglish ? 'max-w-2xl leading-relaxed' : 'max-w-3xl'}`}>{t.help.subtitle}</p>
         </div>
 
         <section className="mb-16">

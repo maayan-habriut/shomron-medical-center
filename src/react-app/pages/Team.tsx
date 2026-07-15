@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n';
 
 export default function Team() {
-  const { t, dir, localizePath } = useLanguage();
-  const avatarMargin = dir === 'rtl' ? 'ml-6' : 'mr-6';
+  const { t, dir, language, localizePath } = useLanguage();
+  const isEnglish = language === 'en';
 
   const values = [
     { icon: Award, title: t.team.value1Title, desc: t.team.value1Desc, gradient: 'from-blue-500 to-green-500' },
@@ -16,8 +16,8 @@ export default function Team() {
     <div className="min-h-screen py-12" dir={dir}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{t.team.title}</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t.team.subtitle}</p>
+          <h1 className="section-title mb-6">{t.team.title}</h1>
+          <p className={`text-xl text-gray-600 mx-auto text-balance ${isEnglish ? 'max-w-2xl leading-relaxed' : 'max-w-3xl'}`}>{t.team.subtitle}</p>
         </div>
 
         <section className="mb-16">
@@ -34,13 +34,13 @@ export default function Team() {
             {t.team.members.map((member) => (
               <div key={member.name} className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="p-8 md:p-12">
-                  <div className="flex items-center mb-6">
-                    <div className={`w-16 h-16 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center ${avatarMargin}`}>
+                  <div className={`flex items-start sm:items-center mb-6 gap-4 ${dir === 'rtl' ? 'flex-row-reverse text-right' : 'text-left'}`}>
+                    <div className={`w-16 h-16 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center shrink-0`}>
                       <User className="w-8 h-8 text-white" />
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900">{member.name}</h3>
-                      <p className="text-lg text-blue-600 font-semibold">{member.role}</p>
+                    <div className="min-w-0">
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-balance">{member.name}</h3>
+                      <p className="text-base sm:text-lg text-blue-600 font-semibold text-balance">{member.role}</p>
                     </div>
                   </div>
                   {member.description ? (

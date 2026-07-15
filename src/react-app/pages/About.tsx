@@ -2,15 +2,16 @@ import { Heart, Target, Eye, Users, Shield, FileText } from 'lucide-react';
 import { useLanguage } from '../i18n';
 
 export default function About() {
-  const { t, dir } = useLanguage();
+  const { t, dir, language } = useLanguage();
+  const isEnglish = language === 'en';
   const iconMargin = dir === 'rtl' ? 'ml-4' : 'mr-4';
 
   return (
     <div className="min-h-screen py-12" dir={dir}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{t.about.title}</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t.about.subtitle}</p>
+          <h1 className="section-title mb-6">{t.about.title}</h1>
+          <p className={`text-xl text-gray-600 mx-auto text-balance ${isEnglish ? 'max-w-2xl leading-relaxed' : 'max-w-3xl'}`}>{t.about.subtitle}</p>
         </div>
 
         <section className="mb-16">

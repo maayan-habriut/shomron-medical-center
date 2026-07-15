@@ -8,7 +8,8 @@ const PHASE_STATUS = ['completed', 'in-progress', 'pending', 'pending', 'pending
 const CAUSEMATCH_URL = 'https://causematch.com/maayan-habriyut';
 
 export default function Project() {
-  const { t, dir } = useLanguage();
+  const { t, dir, language } = useLanguage();
+  const isEnglish = language === 'en';
   const borderActive = dir === 'rtl' ? 'border-r-4 border-blue-500' : 'border-l-4 border-blue-500';
 
   const statusLabel = (status: typeof PHASE_STATUS[number]) => {
@@ -21,8 +22,8 @@ export default function Project() {
     <div className="min-h-screen py-12" dir={dir}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{t.project.title}</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t.project.subtitle}</p>
+          <h1 className="section-title mb-6">{t.project.title}</h1>
+          <p className={`text-xl text-gray-600 mx-auto text-balance ${isEnglish ? 'max-w-3xl leading-relaxed' : 'max-w-3xl'}`}>{t.project.subtitle}</p>
         </div>
 
         <section className="mb-16">
@@ -70,7 +71,7 @@ export default function Project() {
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{facility.name}</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 text-balance">{facility.name}</h3>
                   <div className="text-3xl font-bold text-blue-600 mb-3">{FACILITY_COUNTS[index]}</div>
                   <p className="text-gray-600 text-sm">{facility.description}</p>
                 </div>
@@ -108,13 +109,13 @@ export default function Project() {
                   </div>
                   <div className="flex-grow">
                     <div className={`bg-white rounded-lg shadow-lg p-6 ${status === 'in-progress' ? borderActive : ''}`}>
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-xl font-semibold text-gray-900">{phase.title}</h3>
-                        <div className={`flex items-center ${dir === 'rtl' ? '' : 'gap-2'}`}>
-                          <Calendar className={`w-4 h-4 text-gray-500 ${dir === 'rtl' ? 'ml-2' : ''}`} />
-                          <span className="text-sm text-gray-500">{phase.duration}</span>
-                        </div>
+                    <div className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4 ${dir === 'rtl' ? 'sm:flex-row-reverse' : ''}`}>
+                      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 text-balance">{phase.title}</h3>
+                      <div className={`flex items-center shrink-0 ${dir === 'rtl' ? '' : 'gap-2'}`}>
+                        <Calendar className={`w-4 h-4 text-gray-500 ${dir === 'rtl' ? 'ml-2' : ''}`} />
+                        <span className="text-sm text-gray-500 whitespace-nowrap">{phase.duration}</span>
                       </div>
+                    </div>
                       <p className="text-gray-700">{phase.description}</p>
                       <div className="mt-4">
                         <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${

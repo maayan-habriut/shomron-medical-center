@@ -8,6 +8,7 @@ const CAUSEMATCH_URL = 'https://causematch.com/maayan-habriyut';
 
 export default function Home() {
   const { t, dir, localizePath, language } = useLanguage();
+  const isEnglish = language === 'en';
   const ArrowIcon = dir === 'rtl' ? ArrowLeft : ArrowRight;
   const locale = language === 'he' ? 'he-IL' : 'en-US';
   const rowReverse = dir === 'rtl' ? 'space-x-reverse' : '';
@@ -23,34 +24,34 @@ export default function Home() {
           fetchPriority="high"
         />
         <div className="absolute inset-0 bg-black/50 z-0" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 z-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 z-10">
           <div className="text-center">
             <div className="mb-6">
-              <h2 className="text-xl md:text-2xl font-semibold text-blue-100 mb-2">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-100 mb-3 text-balance">
                 {t.home.heroSubtitle}
               </h2>
-              <h1 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-green-300">
+              <h1 className="hero-title text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-green-300 max-w-4xl mx-auto">
                 {t.home.heroTitle}
               </h1>
             </div>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className={`text-lg sm:text-xl md:text-2xl mb-8 text-blue-100 mx-auto leading-relaxed text-balance ${isEnglish ? 'max-w-2xl' : 'max-w-3xl'}`}>
               {t.home.heroDescription}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center max-w-xl sm:max-w-none mx-auto">
               <a
                 href={CAUSEMATCH_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-green-500 to-yellow-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-green-500 to-yellow-500 text-white px-8 py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
               >
                 {t.common.donateNow}
               </a>
               <Link
                 to={localizePath('/project')}
-                className={`border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-700 transition-all duration-300 flex items-center justify-center gap-2 ${rowReverse}`}
+                className={`border-2 border-white text-white px-6 sm:px-8 py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-white hover:text-blue-700 transition-all duration-300 flex items-center justify-center gap-2 ${rowReverse}`}
               >
                 <span>{t.home.projectInfo}</span>
-                <ArrowIcon className="w-5 h-5" />
+                <ArrowIcon className="w-5 h-5 shrink-0" />
               </Link>
             </div>
           </div>
@@ -67,7 +68,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="px-8 md:px-12 py-10 space-y-6 text-gray-800 text-lg leading-relaxed">
+            <div className={`px-8 md:px-12 py-10 space-y-6 text-gray-800 text-lg leading-relaxed ${isEnglish ? 'max-w-3xl mx-auto' : ''}`}>
               <div className={`flex items-start gap-3 ${rowReverse}`}>
                 <Clock className="w-6 h-6 text-red-600 mt-1 flex-shrink-0" />
                 <p className="font-semibold text-xl text-red-600">{t.home.urgentTime}</p>
@@ -147,14 +148,14 @@ export default function Home() {
 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">{t.home.statsTitle}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <h2 className="section-title text-center mb-12">{t.home.statsTitle}</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Building className="w-8 h-8 text-white" />
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-2">80</div>
-              <div className="text-gray-600">{t.home.statArea}</div>
+              <div className={`text-gray-600 ${isEnglish ? 'text-sm sm:text-base px-2' : ''}`}>{t.home.statArea}</div>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">

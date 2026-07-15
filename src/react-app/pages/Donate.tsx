@@ -2,7 +2,10 @@ import { useState } from 'react';
 import { Heart, CreditCard, Shield, CheckCircle, Gift } from 'lucide-react';
 import { CreateDonation } from '@/shared/types';
 
-export default function Donate() {
+import { useLanguage } from '../i18n';
+import EnglishDonateContent from './EnglishDonatePage';
+
+function DonateHebrew() {
   const [formData, setFormData] = useState<CreateDonation>({
     donor_name: '',
     donor_email: '',
@@ -293,4 +296,9 @@ export default function Donate() {
       </div>
     </div>
   );
+}
+
+export default function Donate() {
+  const { language } = useLanguage();
+  return language === 'en' ? <EnglishDonateContent /> : <DonateHebrew />;
 }

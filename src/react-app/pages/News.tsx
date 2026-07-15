@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import { NewsPost } from '@/shared/types';
+import { useLanguage } from '../i18n';
+import HebrewOnlyPage from './HebrewOnlyPage';
 
 export default function News() {
+  const { language } = useLanguage();
   const [posts, setPosts] = useState<NewsPost[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -24,6 +27,10 @@ export default function News() {
       day: 'numeric'
     });
   };
+
+  if (language === 'en') {
+    return <HebrewOnlyPage />;
+  }
 
   if (loading) {
     return (

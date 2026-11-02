@@ -4,7 +4,7 @@ import { useLanguage } from '../i18n';
 
 const DISPLAYED_SUPPORTS = 1364;
 const DISPLAYED_DONATIONS_TOTAL_NIS = 310_000;
-const CAUSEMATCH_URL = 'https://causematch.com/maayan-habriyut';
+const CAUSEMATCH_URL = '/donate';
 
 export default function Home() {
   const { t, dir, localizePath, language } = useLanguage();

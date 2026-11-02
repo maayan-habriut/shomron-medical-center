@@ -1,7 +1,7 @@
 import { useLanguage } from '../i18n';
 import { Heart, ExternalLink } from 'lucide-react';
 
-const CAUSEMATCH_URL = 'https://causematch.com/maayan-habriyut';
+const DONATION_PAGE_PATH = '/donate';
 
 export default function EnglishDonateContent() {
   const { t, localizePath } = useLanguage();
@@ -22,7 +22,7 @@ export default function EnglishDonateContent() {
             Choose your preferred donation option on our donation page.
           </p>
           <a
-            href={CAUSEMATCH_URL}
+            href={localizePath(DONATION_PAGE_PATH)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-yellow-500 text-white px-10 py-4 rounded-full text-xl font-bold hover:shadow-2xl transition-all transform hover:scale-105"

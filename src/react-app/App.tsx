@@ -26,7 +26,6 @@ function LocalizedRoutes() {
       <Route path="/donate" element={<DonatePage />} />
       <Route path="/privacy" element={<PrivacyPage />} />
       <Route path="/terms" element={<TermsPage />} />
-
       <Route path="/en" element={<HomePage />} />
       <Route path="/en/about" element={<AboutPage />} />
       <Route path="/en/project" element={<ProjectPage />} />
@@ -37,15 +36,18 @@ function LocalizedRoutes() {
       <Route path="/en/donate" element={<DonatePage />} />
       <Route path="/en/privacy" element={<PrivacyPage />} />
       <Route path="/en/terms" element={<TermsPage />} />
-
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
 
+const basename = window.location.hostname.endsWith(".github.io")
+  ? "/shomron-medical-center"
+  : "/";
+
 export default function App() {
   return (
-    <Router>
+    <Router basename={basename}>
       <LanguageProvider>
         <div className="min-h-screen flex flex-col">
           <Header />

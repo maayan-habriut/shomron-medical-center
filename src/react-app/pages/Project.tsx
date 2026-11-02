@@ -5,10 +5,9 @@ const FACILITY_COUNTS = [2, 2, 1, 1];
 const FACILITY_ICONS = [Stethoscope, Building, Zap, Circle];
 const PHASE_STATUS = ['completed', 'in-progress', 'pending', 'pending', 'pending'] as const;
 
-const CAUSEMATCH_URL = 'https://causematch.com/maayan-habriyut';
 
 export default function Project() {
-  const { t, dir, language } = useLanguage();
+  const { t, dir, language, localizePath } = useLanguage();
   const isEnglish = language === 'en';
   const borderActive = dir === 'rtl' ? 'border-r-4 border-blue-500' : 'border-l-4 border-blue-500';
 
@@ -141,7 +140,7 @@ export default function Project() {
             <h2 className="text-3xl font-bold mb-6">{t.project.ctaTitle}</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">{t.project.ctaDescription}</p>
             <a
-              href={CAUSEMATCH_URL}
+              href={localizePath('/donate')}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 inline-block"

@@ -3,7 +3,6 @@ import { Menu, X, Globe } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "../i18n";
 
-const CAUSEMATCH_URL = "https://causematch.com/maayan-habriyut";
 
 export default function Header() {
   const location = useLocation();
@@ -75,7 +74,7 @@ export default function Header() {
               <span>{t.common.languageSwitch}</span>
             </button>
             <a
-              href={CAUSEMATCH_URL}
+              href={localizePath('/donate')}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-green-500 to-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200 whitespace-nowrap text-sm sm:text-base"
@@ -116,7 +115,7 @@ export default function Header() {
                 {t.common.languageSwitch}
               </button>
               <a
-                href={CAUSEMATCH_URL}
+                href={localizePath('/donate')}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}

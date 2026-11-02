@@ -3,7 +3,7 @@ import { Menu, X, Globe } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "../i18n";
 
-const CAUSEMATCH_URL = "https://causematch.com/maayan-habriyut";
+const CAUSEMATCH_URL = "/donate";
 
 export default function Header() {
   const location = useLocation();

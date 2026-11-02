@@ -5,7 +5,7 @@ const FACILITY_COUNTS = [2, 2, 1, 1];
 const FACILITY_ICONS = [Stethoscope, Building, Zap, Circle];
 const PHASE_STATUS = ['completed', 'in-progress', 'pending', 'pending', 'pending'] as const;
 
-const CAUSEMATCH_URL = 'https://causematch.com/maayan-habriyut';
+const CAUSEMATCH_URL = '/donate';
 
 export default function Project() {
   const { t, dir, language } = useLanguage();

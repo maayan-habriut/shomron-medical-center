@@ -30,6 +30,8 @@ jobs:
         run: npm ci || npm install --no-package-lock
 
       - name: Build site
+        env:
+          GITHUB_PAGES_PROJECT: 'true'
         run: npm run build
 
       - name: Create SPA 404 fallback

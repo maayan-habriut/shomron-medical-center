@@ -73,14 +73,14 @@ export default function Header() {
               <Globe className="w-4 h-4 shrink-0" />
               <span>{t.common.languageSwitch}</span>
             </button>
-            <a
-              href={localizePath('/donate')}
+            <Link
+              to={localizePath('/donate')}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-green-500 to-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200 whitespace-nowrap text-sm sm:text-base"
             >
               {t.common.donate}
-            </a>
+            </Link>
           </div>
 
           <button
@@ -114,15 +114,15 @@ export default function Header() {
                 <Globe className="w-4 h-4" />
                 {t.common.languageSwitch}
               </button>
-              <a
-                href={localizePath('/donate')}
+              <Link
+              to={localizePath('/donate')}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="bg-gradient-to-r from-green-500 to-blue-600 text-white px-6 py-2 rounded-full font-semibold text-center mt-2 block"
               >
                 {t.common.donate}
-              </a>
+              </Link>
             </div>
           </div>
         )}

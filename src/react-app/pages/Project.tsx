@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Building, Calendar, CheckCircle, Circle, MapPin, Stethoscope, Users, Zap } from 'lucide-react';
 import { useLanguage } from '../i18n';
 
@@ -139,14 +140,14 @@ export default function Project() {
           <div className="bg-gradient-to-r from-blue-600 to-green-600 rounded-lg p-8 md:p-12 text-white">
             <h2 className="text-3xl font-bold mb-6">{t.project.ctaTitle}</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">{t.project.ctaDescription}</p>
-            <a
-              href={localizePath('/donate')}
+            <Link
+              to={localizePath('/donate')}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 inline-block"
             >
               {t.common.donateNow}
-            </a>
+            </Link>
           </div>
         </section>
       </div>

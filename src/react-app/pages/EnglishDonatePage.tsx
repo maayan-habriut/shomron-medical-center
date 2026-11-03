@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n';
 import { Heart, ExternalLink } from 'lucide-react';
 
@@ -21,15 +22,15 @@ export default function EnglishDonateContent() {
           <p className="text-lg text-gray-600 mb-8">
             Choose your preferred donation option on our donation page.
           </p>
-          <a
-            href={localizePath(DONATION_PAGE_PATH)}
+          <Link
+              to={localizePath(DONATION_PAGE_PATH)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-yellow-500 text-white px-10 py-4 rounded-full text-xl font-bold hover:shadow-2xl transition-all transform hover:scale-105"
           >
             <span>Choose a Donation Option</span>
             <ExternalLink className="w-5 h-5" />
-          </a>
+          </Link>
           <p className="text-sm text-gray-500 mt-8">
             Registered Israeli nonprofit #580826667 · Karnei Shomron, Israel
           </p>

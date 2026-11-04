@@ -1,3 +1,4 @@
+import DonationLink from '../components/DonationLink';
 import { Heart, Users, Building, Stethoscope, ArrowLeft, ArrowRight, Phone, Clock, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n';
@@ -37,14 +38,14 @@ export default function Home() {
               {t.home.heroDescription}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center max-w-xl sm:max-w-none mx-auto">
-              <Link
-              to={localizePath('/donate')}
+              <DonationLink
+              
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-green-500 to-yellow-500 text-white px-8 py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
               >
                 {t.common.donateNow}
-              </Link>
+              </DonationLink>
               <Link
                 to={localizePath('/project')}
                 className={`border-2 border-white text-white px-6 sm:px-8 py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-white hover:text-blue-700 transition-all duration-300 flex items-center justify-center gap-2 ${rowReverse}`}
@@ -126,15 +127,15 @@ export default function Home() {
               <div className="text-center space-y-4 pt-6">
                 <p className="text-2xl font-bold text-gray-900">{t.home.joinTitle}</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-                  <Link
-              to={localizePath('/donate')}
+                  <DonationLink
+              
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`bg-gradient-to-r from-green-500 to-yellow-500 text-white px-10 py-5 rounded-full text-xl font-bold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 ${rowReverse}`}
                   >
                     <Heart className="w-6 h-6" />
                     <span>{t.common.joinDonate}</span>
-                  </Link>
+                  </DonationLink>
                 </div>
                 <div className="pt-6 border-t border-gray-200 mt-8">
                   <p className="text-lg font-semibold text-gray-800">{t.home.signature}</p>
@@ -188,14 +189,14 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-white mb-6">{t.home.ctaTitle}</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">{t.home.ctaDescription}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to={localizePath('/donate')}
+            <DonationLink
+              
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
             >
               {t.common.donateNow}
-            </Link>
+            </DonationLink>
             <Link
               to={localizePath('/help')}
               className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300"

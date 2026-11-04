@@ -15,12 +15,12 @@ export default function Donate() {
         <p className="text-lg text-gray-600 text-center mb-8">Help bring urgent medical care closer to families in Shomron. Choose the donation method that works for you.</p>
         <div className="space-y-6">
           <section className="bg-white rounded-xl shadow p-6 md:p-8">
-            <h2 className="text-2xl font-bold mb-3">Donate in the United States</h2>
+            <h2 className="text-2xl font-bold mb-3"><span aria-hidden="true">🇺🇸</span> Donate in the U.S.</h2>
             <p className="text-gray-600 mb-5">U.S. donations to Friends of Ma'ayan Habriut Inc. are tax-deductible to the extent permitted by law.</p>
-            <a href="https://abcharity.org/campaign.php?id=8038" target="_blank" rel="noopener noreferrer" className="block text-center bg-green-700 hover:bg-green-800 text-white font-bold rounded-lg px-6 py-4">Donate Online via AB Charity</a>
+            <a href="https://abcharity.org/campaign.php?id=8038" target="_blank" rel="noopener noreferrer" className="block text-center bg-green-700 hover:bg-green-800 text-white font-bold rounded-lg px-6 py-4"><span aria-hidden="true">🇺🇸</span> Donate in the U.S. via AB Charity</a>
           </section>
           <section className="bg-white rounded-xl shadow p-6 md:p-8">
-            <h2 className="text-2xl font-bold mb-4">U.S. Bank Transfer</h2>
+            <h2 className="text-2xl font-bold mb-4"><span aria-hidden="true">🇺🇸</span> U.S. Bank Transfer</h2>
             <dl className="space-y-4 break-words">
               <div><dt className="text-sm text-gray-500">Beneficiary / Account name</dt><dd className="font-semibold">FRIENDS OF MA’AYAN HABRIUT INC</dd></div>
               <div><dt className="text-sm text-gray-500">Beneficiary address</dt><dd>495 Route 70 #1025, Brick, NJ 08723, USA</dd></div>
@@ -32,15 +32,15 @@ export default function Donate() {
             <p className="text-sm text-gray-600 mt-5">For ACH or international transfers, please contact us to confirm any additional banking requirements.</p>
           </section>
           <section className="bg-white rounded-xl shadow p-6 md:p-8">
-            <h2 className="text-2xl font-bold mb-3">Donate by Check</h2>
+            <h2 className="text-2xl font-bold mb-3"><span aria-hidden="true">🇺🇸</span> Donate by Check (U.S.)</h2>
             <p className="text-gray-600 mb-3">Please make your check payable to Friends of Ma'ayan Habriut Inc. and mail it to:</p>
             <address className="not-italic leading-relaxed">Friends of Ma'ayan Habriut Inc.<br />495 Route 70 #1025<br />Brick, NJ 08723, USA</address>
             <p className="text-sm text-gray-600 mt-4">Include your name and email address so we can send your donation receipt.</p>
           </section>
           <section className="bg-white rounded-xl shadow p-6 md:p-8">
-            <h2 className="text-2xl font-bold mb-3">Donate in Israel</h2>
+            <h2 className="text-2xl font-bold mb-3"><span aria-hidden="true">🇮🇱</span> Donate in Israel</h2>
             <p className="text-gray-600 mb-4">Donate through Veyiten Yosef via Nedarim Plus. This is the Israeli tax-deductible donation route.</p>
-            <a href={TAX_DEDUCTIBLE_DONATION_URL} target="_blank" rel="noopener noreferrer" className="block text-center border-2 border-green-700 text-green-800 font-bold rounded-lg px-6 py-4">Donate in Israel</a>
+            <a href={TAX_DEDUCTIBLE_DONATION_URL} target="_blank" rel="noopener noreferrer" className="block text-center border-2 border-green-700 text-green-800 font-bold rounded-lg px-6 py-4"><span aria-hidden="true">🇮🇱</span> Donate in Israel</a>
           </section>
         </div>
         <p className="text-center text-gray-600 mt-8">For transfer assistance or a donation receipt, email <a className="text-blue-700 underline" href="mailto:mbshomron@gmail.com">mbshomron@gmail.com</a>. For bank transfers, include your name, donation date and amount.</p>

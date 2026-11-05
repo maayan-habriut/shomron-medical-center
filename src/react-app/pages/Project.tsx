@@ -54,7 +54,7 @@ export default function Project() {
                   className="rounded-lg shadow-lg w-full"
                 />
                 <div className={`absolute -bottom-4 bg-white p-4 rounded-lg shadow-lg ${dir === 'rtl' ? '-left-4' : '-right-4'}`}>
-                  <div className="text-2xl font-bold text-blue-600">80</div>
+                  <div className="text-2xl font-bold text-blue-600">480</div>
                   <div className="text-sm text-gray-600">{t.project.areaLabel}</div>
                 </div>
               </div>

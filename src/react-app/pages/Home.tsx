@@ -154,7 +154,7 @@ export default function Home() {
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Building className="w-8 h-8 text-white" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">80</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">480</div>
               <div className={`text-gray-600 ${isEnglish ? 'text-sm sm:text-base px-2' : ''}`}>{t.home.statArea}</div>
             </div>
             <div className="text-center">
